@@ -1,16 +1,15 @@
-import { ReactNode } from "react";
 import { useGame } from "../../context/GameContext";
+import "../styles/levels.css";
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   const { score } = useGame();
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>CodeQuest </h1>
-      <p>An interactive frontend engineering simulation</p>
-      <p>Score: {score}</p>
-      <hr />
-      {children}
+    <div className="level-container">
+
+      <div className="level-content">
+        {children}
+      </div>
     </div>
   );
 };

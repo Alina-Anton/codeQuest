@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useGame } from "../../context/GameContext";
 import { useTimer } from "../../hooks/useTimer";
 import MonacoCodeEditor from "../ui/ MonacoCodeEditor";
-import Button from "../ui/Button";
+import ScoreBar from "../ui/ScoreBar";
 
 
 const initialCode = `
@@ -15,7 +15,7 @@ useEffect(() => {
 
 const Level1Bug = () => {
   const { nextLevel, addScore } = useGame();
-
+const { score } = useGame();
   const handleExpire = useCallback(() => {
     nextLevel();
   }, [nextLevel]);
@@ -27,17 +27,18 @@ const Level1Bug = () => {
   };
 
   const handleSuccess = () => {
-    const baseScore = 40;
-    const timeBonus = timeLeft;
+    const baseScore = 30;
     addScore(baseScore);
     nextLevel();
   };
 
   return (
-    <div>
-      <h2>🐛 Production Bug</h2>
-      <p>Fix the useEffect dependency issue.</p>
-      <p>⏱ Time Left: {timeLeft}s</p>
+    <div className="level-container">
+       <ScoreBar score={score} maxScore={100} />
+
+      <h2 className="level-title">Production Bug</h2>
+      <p className="level-description">Fix the useEffect dependency issue only.</p>
+      <p className="level-description">⏱ Time Left: {timeLeft}s</p>
 
       <MonacoCodeEditor
         initialCode={initialCode}
@@ -50,37 +51,3 @@ const Level1Bug = () => {
 
 export default Level1Bug;
 
-// import { useEffect, useState } from "react";
-// import { useGame } from "../../context/GameContext";
-
-// const Level1Bug = () => {
-//   const { nextLevel, addScore } = useGame();
-//   const [count, setCount] = useState(0);
-
-//   // Intentional subtle bug
-//   useEffect(() => {
-//     console.log("Count changed");
-//   }, []); // Missing dependency
-
-//   const handleFix = () => {
-//     addScore(20);
-//     nextLevel();
-//   };
-
-//   return (
-//     <div>
-//       <h2>🐛 Level 1 — Production Bug</h2>
-//       <p>
-//         A state update isn’t triggering expected behavior. What's wrong with
-//         this useEffect?
-//       </p>
-
-//       <button onClick={() => setCount((c) => c + 1)}>Increment</button>
-//       <p>Count: {count}</p>
-
-//       <button onClick={handleFix}>Fix Dependency → Next Level</button>
-//     </div>
-//   );
-// };
-
-// export default Level1Bug;

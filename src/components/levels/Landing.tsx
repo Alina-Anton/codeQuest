@@ -1,5 +1,5 @@
 import React from "react";
-import "./Landing.css";
+import "../styles/Landing.css";
 
 type Props = {
   onStart: () => void;
@@ -19,7 +19,6 @@ const Landing: React.FC<Props> = ({ onStart }) => {
         ))}
       </div>
 
-      {/* Content */}
       <div className="landing-content">
         <h1 className="title">CodeQuest</h1>
 

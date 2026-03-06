@@ -1,8 +1,10 @@
 import { useGame } from "../../context/GameContext";
 import Button from "../ui/Button";
+import ScoreBar from "../ui/ScoreBar";
 
 const Level3Accessibility = () => {
   const { nextLevel, addScore } = useGame();
+  const { score } = useGame();
 
   const handlePass = () => {
     addScore(20);
@@ -20,14 +22,16 @@ const Level3Accessibility = () => {
   };
 
   return (
-    <div>
-      <h2>♿ Level 3 — Accessibility Audit</h2>
+    <div className="level-container">
+      <ScoreBar score={score} maxScore={100} />
+      <h2 className="level-title">Accessibility Audit</h2>
 
-      <p>What's wrong with this submit button?</p>
+      <p className="level-description">What's wrong with this submit button?</p>
 
       <div onClick={() => alert("Clicked!")}>
         Submit
       </div>
+      <div className="button-group">
 
     
       <Button onClick={() => handleDecision("bad")}>
@@ -41,6 +45,7 @@ const Level3Accessibility = () => {
       <Button onClick={() => handleDecision("ok")}>
         Not clickable
       </Button>
+    </div>
     </div>
   );
 };

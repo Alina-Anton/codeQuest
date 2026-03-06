@@ -1,8 +1,9 @@
 import { useGame } from "../../context/GameContext";
 import Button from "../ui/Button";
+import ScoreBar from "../ui/ScoreBar";
 
 const Level4Tradeoff = () => {
-  const { nextLevel, addScore } = useGame();
+  const { nextLevel, addScore, score } = useGame();
 
   // const handleDecision = () => {
   //   addScore(20);
@@ -26,23 +27,20 @@ const Level4Tradeoff = () => {
   };
 
   return (
-    <div>
-      <h2>🧠 Level 4 — Product Tradeoff</h2>
-      <p>
+    <div className="level-container">
+      <ScoreBar score={score} maxScore={100} />
+      <h2 className="level-title">Product Tradeoff</h2>
+      <p className="level-description">
         Marketing wants heavy animations. Deadline is tomorrow. What do you do?
       </p>
-
-      {/* <button onClick={handleDecision}>
-        Suggest lightweight CSS transitions + phased rollout
-      </button> */}
-
+    <div className="button-group">
       <Button onClick={() => handleDecision("bad")}>
         Nothing I can do here
       </Button>
-
       <Button onClick={() => handleDecision("best")}>
       Suggest lightweight CSS transitions + phased rollout
       </Button>
+    </div>
     </div>
   );
 };

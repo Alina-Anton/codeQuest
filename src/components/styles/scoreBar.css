@@ -1,0 +1,33 @@
+.score-bar-container {
+    width: 350px;
+    max-width: 400px;
+    padding-bottom: 80px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #00f5d4;
+    font-family: "JetBrains Mono", monospace;
+  }
+  
+  .score-text {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .score-bar-background {
+    width: 100%;
+    height: 20px;
+    background-color: #1c2128; /* dark background */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #00f5d4;
+  }
+  
+  .score-bar-fill {
+    height: 100%;
+    background-color: #00f5d4; /* neon fill */
+    border-radius: 10px 0 0 10px;
+    transition: width 0.2s linear;
+  }

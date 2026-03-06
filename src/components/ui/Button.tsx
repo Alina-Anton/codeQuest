@@ -1,21 +1,13 @@
-import React from "react";
+import "../styles/button.css";
 
-interface Props {
+type Props = {
   children: React.ReactNode;
   onClick: () => void;
-}
+};
 
 const Button = ({ children, onClick }: Props) => {
   return (
-    <button
-      onClick={onClick}
-      style={{
-        width: "100%",
-        padding: "6px",
-        fontSize: "14px",
-        cursor: "pointer",
-      }}
-    >
+    <button className="dev-button" onClick={onClick}>
       {children}
     </button>
   );

@@ -1,0 +1,23 @@
+.dev-button {
+ width: 350px;
+    padding: 14px;
+    border: 1px solid  #00f5d4;
+    background: transparent;
+    color:  #00f5d4;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.25s ease;
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .dev-button:hover {
+    box-shadow: 0 0 10px  #00f5d4;
+    transform: translateY(-1px);
+  }

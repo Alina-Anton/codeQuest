@@ -36,8 +36,7 @@ const MonacoCodeEditor = ({ initialCode, validate, onSuccess }: Props) => {
           automaticLayout: true,
         }}
       />
-
-      <Button onClick={handleRun}>Run Tests</Button>
+      <Button  onClick={handleRun}>Run Tests</Button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
