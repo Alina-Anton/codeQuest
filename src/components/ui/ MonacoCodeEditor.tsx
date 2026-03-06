@@ -1,44 +1,46 @@
-// import Editor from "@monaco-editor/react";
-// import { useState } from "react";
+import Editor from "@monaco-editor/react";
+import { useState } from "react";
+import Button from "../ui/Button";
 
-// interface Props {
-//   initialCode: string;
-//   validate: (code: string) => boolean;
-//   onSuccess: () => void;
-// }
 
-// const MonacoCodeEditor = ({ initialCode, validate, onSuccess }: Props) => {
-//   const [code, setCode] = useState(initialCode);
-//   const [error, setError] = useState("");
+interface Props {
+  initialCode: string;
+  validate: (code: string) => boolean;
+  onSuccess: () => void;
+}
 
-//   const handleRun = () => {
-//     if (validate(code)) {
-//       setError("");
-//       onSuccess();
-//     } else {
-//       setError("❌ Tests failing. Check your dependency array.");
-//     }
-//   };
+const MonacoCodeEditor = ({ initialCode, validate, onSuccess }: Props) => {
+  const [code, setCode] = useState(initialCode);
+  const [error, setError] = useState("");
 
-//   return (
-//     <div>
-//       <Editor
-//         height="300px"
-//         defaultLanguage="typescript"
-//         theme="vs-dark"
-//         value={code}
-//         onChange={(value) => setCode(value || "")}
-//         options={{
-//           fontSize: 14,
-//           minimap: { enabled: false },
-//           automaticLayout: true,
-//         }}
-//       />
+  const handleRun = () => {
+    if (validate(code)) {
+      setError("");
+      onSuccess();
+    } else {
+      setError("❌ Tests failing. Check your dependency array.");
+    }
+  };
 
-//       <button onClick={handleRun}>Run Tests</button>
-//       {error && <p style={{ color: "red" }}>{error}</p>}
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <Editor
+        height="200px"
+        defaultLanguage="typescript"
+        theme="vs-dark"
+        value={code}
+        onChange={(value) => setCode(value || "")}
+        options={{
+          fontSize: 14,
+          minimap: { enabled: false },
+          automaticLayout: true,
+        }}
+      />
 
-// export default MonacoCodeEditor;
+      <Button onClick={handleRun}>Run Tests</Button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+    </div>
+  );
+};
+
+export default MonacoCodeEditor;

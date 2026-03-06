@@ -1,4 +1,5 @@
 import { useGame } from "../../context/GameContext";
+import Button from "../ui/Button";
 
 const FinalDeploy = () => {
   const { score, resetGame } = useGame();
@@ -7,7 +8,7 @@ const FinalDeploy = () => {
     <div>
       <h2>🚀 Deployment Complete</h2>
       <p>Final Score: {score} / 100</p>
-      <button onClick={resetGame}>Restart Simulation</button>
+      <Button onClick={resetGame}>Restart Simulation</Button>
     </div>
   );
 };

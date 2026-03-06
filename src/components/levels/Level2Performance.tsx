@@ -1,20 +1,16 @@
 import { useGame } from "../../context/GameContext";
 import { useTimer } from "../../hooks/useTimer";
 import { useCallback } from "react";
+import Button from "../ui/Button";
+
 
 const Level2Performance = () => {
   const { nextLevel, addScore } = useGame();
 
-  const handleExpire = useCallback(() => {
-    nextLevel();
-  }, [nextLevel]);
-
-  const { timeLeft } = useTimer(45, handleExpire);
-
   const handleDecision = (quality: "best" | "ok" | "bad") => {
     let score = 0;
 
-    if (quality === "best") score = 30 + timeLeft;
+    if (quality === "best") score = 20;
     if (quality === "ok") score = 15;
     if (quality === "bad") score = 5;
 
@@ -25,19 +21,18 @@ const Level2Performance = () => {
   return (
     <div>
       <h2>⚡ Performance Crisis</h2>
-      <p>⏱ {timeLeft}s remaining</p>
 
-      <button onClick={() => handleDecision("bad")}>
+      <Button onClick={() => handleDecision("bad")}>
         Add useMemo everywhere
-      </button>
+      </Button>
 
-      <button onClick={() => handleDecision("best")}>
+      <Button onClick={() => handleDecision("best")}>
         Implement lazy loading + code splitting
-      </button>
+      </Button>
 
-      <button onClick={() => handleDecision("ok")}>
+      <Button  onClick={() => handleDecision("ok")}>
         Memoize heavy computed values
-      </button>
+      </Button>
     </div>
   );
 };
