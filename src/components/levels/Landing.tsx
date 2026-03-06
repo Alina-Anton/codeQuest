@@ -1,5 +1,5 @@
 import React from "react";
-import "./landing.css";
+import "./Landing.css";
 
 type Props = {
   onStart: () => void;
@@ -23,20 +23,22 @@ const Landing: React.FC<Props> = ({ onStart }) => {
       <div className="landing-content">
         <h1 className="title">CodeQuest</h1>
 
-        <p className="subtitle">A frontend engineering experience</p>
 
-        <div className="taglines">
+        {/* <div className="taglines">
           <p>Not a portfolio.</p>
           <p>A simulation.</p>
-        </div>
+        </div> */}
 
         <button className="start-btn" onClick={onStart}>
           START CHALLENGE
         </button>
 
+        <p className="subtitle">A frontend engineering experience</p>
+
+
         <div className="footer">
           <p>Estimated time: 5 minutes</p>
-          <p>Best experienced on desktop</p>
+          {/* <p>Best experienced on desktop</p> */}
         </div>
       </div>
     </div>

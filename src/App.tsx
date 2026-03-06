@@ -32,12 +32,10 @@ const LevelRenderer = () => {
 function App() {
   const [started, setStarted] = useState(false);
 
-  // Show landing screen first
   if (!started) {
     return <Landing onStart={() => setStarted(true)} />;
   }
 
-  // Start the game
   return (
     <GameProvider>
       <Layout>
