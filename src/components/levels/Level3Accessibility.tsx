@@ -28,23 +28,22 @@ const Level3Accessibility = () => {
 
       <p className="level-description">What's wrong with this submit button?</p>
 
-      <div onClick={() => alert("Clicked!")}>
-        Submit
-      </div>
+      <button className="fake-submit" >
+  Submit
+</button>
       <div className="button-group">
 
     
       <Button onClick={() => handleDecision("bad")}>
-        Nothing is wrong with the button
-      </Button>
-
-      <Button onClick={() => handleDecision("best")}>
-      Replace with semantic button + ARIA → Next
-      </Button>
+      Button looks good to me      </Button>
 
       <Button onClick={() => handleDecision("ok")}>
-        Not clickable
-      </Button>
+Low-contrast text      </Button>
+
+<Button onClick={() => handleDecision("best")}>
+      Faulty layout styles      </Button>
+
+     
     </div>
     </div>
   );

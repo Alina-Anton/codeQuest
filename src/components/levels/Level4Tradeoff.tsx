@@ -29,14 +29,13 @@ const Level4Tradeoff = () => {
   return (
     <div className="level-container">
       <ScoreBar score={score} maxScore={100} />
-      <h2 className="level-title">Product Tradeoff</h2>
+      <h2 className="level-title">Product Desigion</h2>
       <p className="level-description">
         Marketing wants heavy animations. Deadline is tomorrow. What do you do?
       </p>
     <div className="button-group">
       <Button onClick={() => handleDecision("bad")}>
-        Nothing I can do here
-      </Button>
+      Do it overnight and hope nothing breaks      </Button>
       <Button onClick={() => handleDecision("best")}>
       Suggest lightweight CSS transitions + phased rollout
       </Button>

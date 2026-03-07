@@ -1,9 +1,9 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useGame } from "../../context/GameContext";
 import { useTimer } from "../../hooks/useTimer";
-import MonacoCodeEditor from "../ui/ MonacoCodeEditor";
+import MonacoCodeEditor from "../ui/MonacoCodeEditor";
 import ScoreBar from "../ui/ScoreBar";
-
+import Button from "../ui/Button";
 
 const initialCode = `
 const [count, setCount] = useState(0);
@@ -14,8 +14,10 @@ useEffect(() => {
 `;
 
 const Level1Bug = () => {
-  const { nextLevel, addScore } = useGame();
-const { score } = useGame();
+  const { nextLevel, addScore, score } = useGame();
+  const [code, setCode] = useState(initialCode);
+  const [error, setError] = useState("");
+
   const handleExpire = useCallback(() => {
     nextLevel();
   }, [nextLevel]);
@@ -26,28 +28,38 @@ const { score } = useGame();
     return code.includes("[count]");
   };
 
-  const handleSuccess = () => {
-    const baseScore = 30;
-    addScore(baseScore);
-    nextLevel();
+  const handleRun = () => {
+    if (validateFix(code)) {
+      setError("");
+      addScore(30);
+      nextLevel();
+    } else {
+      setError("❌ Not fixed. Check your dependency array.");
+    }
   };
 
   return (
     <div className="level-container">
-       <ScoreBar score={score} maxScore={100} />
+      <ScoreBar score={score} maxScore={100} />
 
       <h2 className="level-title">Production Bug</h2>
-      <p className="level-description">Fix the useEffect dependency issue only.</p>
+      <p className="level-description">
+        Fix the useEffect dependency issue only.
+      </p>
       <p className="level-description">⏱ Time Left: {timeLeft}s</p>
 
       <MonacoCodeEditor
         initialCode={initialCode}
-        validate={validateFix}
-        onSuccess={handleSuccess}
+        onCodeChange={setCode}
       />
+
+      <div className="editor-actions">
+        <Button onClick={handleRun}>Next</Button>
+      </div>
+
+      {error && <p className="editor-error">{error}</p>}
     </div>
   );
 };
 
 export default Level1Bug;
-

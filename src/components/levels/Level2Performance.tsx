@@ -21,8 +21,9 @@ const Level2Performance = () => {
 return (
   <div className="level-container">
        <ScoreBar score={score} maxScore={100} />
-    <h2 className="level-title">Performance Crisis</h2>
-<p className="level-description">What's wrong with this submit button?</p>
+    <h2 className="level-title">Performance Optimization</h2>
+<p className="level-description">Fix slow react page due to heavy calculations and large components.</p>
+
 
     <div className="button-group">
       <Button onClick={() => handleDecision("bad")}>
@@ -30,12 +31,11 @@ return (
       </Button>
 
       <Button onClick={() => handleDecision("best")}>
-        Implement lazy loading + code splitting
+      Memoize heavy computed values
       </Button>
 
       <Button onClick={() => handleDecision("ok")}>
-        Memoize heavy computed values
-      </Button>
+      Implement lazy loading + code splitting      </Button>
     </div>
   </div>
 );
