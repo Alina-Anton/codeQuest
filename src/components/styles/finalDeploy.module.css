@@ -4,12 +4,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 800px;
   text-align: center;
   background-color: #0d1117;
   color: #00f5d4;
   font-family: "JetBrains Mono", monospace;
-  padding: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -19,19 +18,16 @@
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #cfece8;
-  margin-bottom: 90px;
+  margin-bottom: 50px;
 }
 
 /* Level description */
 .description {
   font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-/* Button style (optional override for Button component) */
-.button {
-  width: 200px;
-  margin-top: 10px;
-}
+
 
 /* Overlay for perfect score */
 .congratsOverlay {
@@ -54,7 +50,18 @@
   color: #00f5d4;
   text-shadow: 0 0 10px #00f5d4, 0 0 20px #00f5d4, 0 0 30px #00f5d4;
   animation: pulse 1.5s infinite alternate;
+  margin-bottom: 40px;
 }
+
+/* Lower score text */
+.lowerScoreText {
+  font-size: 2.5rem;
+  color: rgb(241, 181, 102);
+  text-shadow: 0 0 10px #00f5d4, 0 0 20px #00f5d4, 0 0 30px #00f5d4;
+  animation: pulse 1.5s infinite alternate;
+  margin-bottom: 70px;
+}
+
 
 /* Pulse animation for text */
 @keyframes pulse {

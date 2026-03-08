@@ -7,16 +7,25 @@ const FinalDeploy = () => {
   const isPerfect = score === 100;
   return (
     <div className={styles.container}>
-      {isPerfect && (
+      {isPerfect ? (
         <>
       <h2 className={styles.title}>Deployment Complete</h2>
         <div className={styles.congratsOverlay}>
           <div className={styles.congratsText}> Congratulations!</div>
         </div>
+        <p className={styles.description}>Final Score: {score} / 100</p>
         </>
-      )}
-      <p className={styles.description}>Final Score: {score} / 100</p>
-      {!isPerfect && <Button onClick={resetGame}>Restart Simulation</Button>}
+      ):(
+        <>
+        <h2 className={styles.title}>Deployment Complete</h2>
+          <div className={styles.congratsOverlay}>
+            <div className={styles.lowerScoreText}> Bugs are out!</div>
+          </div>
+          <p className={styles.description}>Final Score: {score} / 100</p>
+       <Button onClick={resetGame}>Restart Simulation</Button>
+          </>
+      )
+      }
     </div>
   );
 };
