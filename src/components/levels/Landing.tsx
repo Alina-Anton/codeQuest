@@ -22,12 +22,6 @@ const Landing: React.FC<Props> = ({ onStart }) => {
       <div className="landing-content">
         <h1 className="title">CodeQuest</h1>
 
-
-        {/* <div className="taglines">
-          <p>Not a portfolio.</p>
-          <p>A simulation.</p>
-        </div> */}
-
         <button className="start-btn" onClick={onStart}>
           START CHALLENGE
         </button>

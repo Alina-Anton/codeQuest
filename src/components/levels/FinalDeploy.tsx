@@ -1,10 +1,14 @@
 import { useGame } from "../../context/GameContext";
 import Button from "../ui/Button";
 import styles from "../styles/finalDeploy.module.css";
+import { generateAIReview } from "../../utils/generateAIReview";
+
 
 const FinalDeploy = () => {
   const { score, resetGame } = useGame();
   const isPerfect = score === 100;
+  const review = generateAIReview(score);
+
   return (
     <div className={styles.container}>
       {isPerfect ? (
@@ -14,6 +18,18 @@ const FinalDeploy = () => {
           <div className={styles.congratsText}> Congratulations!</div>
         </div>
         <p className={styles.description}>Final Score: {score} / 100</p>
+        <div className={styles.reviewBox}>
+        <h3>AI Engineering Review</h3>
+
+        <div className={styles.section}>
+          <h4>Strengths:</h4>
+          <ul>
+            {review.strengths.map((item, i) => (
+              <li key={i}>✔ {item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
         </>
       ):(
         <>
@@ -22,6 +38,25 @@ const FinalDeploy = () => {
             <div className={styles.lowerScoreText}> Bugs are out!</div>
           </div>
           <p className={styles.description}>Final Score: {score} / 100</p>
+          <div className={styles.reviewBox}>
+        <h3>AI Engineering Review</h3>
+        <div className={styles.section}>
+          <h4>Strengths:</h4>
+          <ul>
+            {review.strengths.map((item, i) => (
+              <li key={i}>✔ {item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.section}>
+          <h4>Areas to Improve:</h4>
+          <ul>
+            {review.improvements.map((item, i) => (
+              <li key={i}>⚠ {item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
        <Button onClick={resetGame}>Restart Simulation</Button>
           </>
       )
