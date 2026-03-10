@@ -1,6 +1,6 @@
-import { useGame } from "../../context/GameContext";
-import Button from "../ui/Button";
-import ScoreBar from "../ui/ScoreBar";
+import { useGame } from "../context/GameContext";
+import Button from "../components/ui/Button";
+import ScoreBar from "../components/ui/ScoreBar";
 
 const Level4Tradeoff = () => {
   const { nextLevel, addScore, score } = useGame();

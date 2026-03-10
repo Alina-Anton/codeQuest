@@ -2,13 +2,13 @@ import { useState } from "react";
 import { GameProvider, useGame } from "./context/GameContext";
 
 import Layout from "./components/layout/Layout";
-import Landing from "./components/levels/Landing";
+import Landing from "./levels/Landing";
 
-import Level1Bug from "./components/levels/Level1Bug";
-import Level2Performance from "./components/levels/Level2Performance";
-import Level3Accessibility from "./components/levels/Level3Accessibility";
-import Level4Tradeoff from "./components/levels/Level4Tradeoff";
-import FinalDeploy from "./components/levels/FinalDeploy";
+import Level1Bug from "./levels/Level1Bug";
+import Level2Performance from "./levels/Level2Performance";
+import Level3Accessibility from "./levels/Level3Accessibility";
+import Level4Tradeoff from "./levels/Level4Tradeoff";
+import FinalDeploy from "./levels/FinalDeploy";
 
 const LevelRenderer = () => {
   const { currentLevel } = useGame();

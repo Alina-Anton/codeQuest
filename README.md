@@ -7,6 +7,11 @@ Instead of showcasing code through a static portfolio, CodeQuest simulates the *
 
 
 
+# Live Demo
+Try the simulation: https://codequest-2fqa--5173--056788dd.local-corp.webcontainer.io/
+
+
+
 # Simulation Overview
 
 CodeQuest walks players through a series of **engineering scenarios inspired by real production issues.**
@@ -122,6 +127,12 @@ If time expires, the simulation proceeds to the next scenario with 0 points.
 
 
 
+#  Running Locally
+Clone the repository and start the development server.
+git clone https://github.com/Alina-Anton/codeQuest.git
+
+
+
 # Project Structure
 
 codequest
@@ -152,8 +163,7 @@ codequest
 │   │   └── ui
 │   │       ├── Button.tsx
 │   │       ├── ScoreBar.tsx
-│   │       ├── MonacoCodeEditor.tsx
-│   │       └── LevelTransition.tsx
+│   │       └── MonacoCodeEditor.tsx
 │   │
 │   ├── context
 │   │   └── GameContext.tsx

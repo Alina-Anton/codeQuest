@@ -1,6 +1,6 @@
 import Editor from "@monaco-editor/react";
 import { useState } from "react";
-import "../styles/monacoEditor.css";
+import "../../styles/monacoEditor.css";
 
 interface Props {
   initialCode: string;

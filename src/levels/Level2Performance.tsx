@@ -1,7 +1,7 @@
-import { useGame } from "../../context/GameContext";
-import Button from "../ui/Button";
+import { useGame } from "../context/GameContext";
+import Button from "../components/ui/Button";
 import "../styles/levels.css";
-import ScoreBar from "../ui/ScoreBar";
+import ScoreBar from "../components/ui/ScoreBar";
 
 const Level2Performance = () => {
   const { nextLevel, addScore } = useGame();

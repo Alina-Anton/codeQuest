@@ -1,9 +1,10 @@
 import { useCallback, useState } from "react";
-import { useGame } from "../../context/GameContext";
-import { useTimer } from "../../hooks/useTimer";
-import MonacoCodeEditor from "../ui/MonacoCodeEditor";
-import ScoreBar from "../ui/ScoreBar";
-import Button from "../ui/Button";
+import { useGame } from "../context/GameContext";
+import { useTimer } from "../hooks/useTimer";
+import MonacoCodeEditor from "../components/ui/MonacoCodeEditor";
+import ScoreBar from "../components/ui/ScoreBar";
+import Button from "../components/ui/Button";
+
 
 const initialCode = `
 const [count, setCount] = useState(0);

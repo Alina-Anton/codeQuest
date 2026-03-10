@@ -1,7 +1,7 @@
-import { useGame } from "../../context/GameContext";
-import Button from "../ui/Button";
+import { useGame } from "../context/GameContext";
+import Button from "../components/ui/Button";
 import styles from "../styles/finalDeploy.module.css";
-import { generateAIReview } from "../../utils/generateAIReview";
+import { generateAIReview } from "../utils/generateAIReview";
 
 
 const FinalDeploy = () => {

@@ -1,5 +1,5 @@
 import { useGame } from "../../context/GameContext";
-import "../styles/levels.css";
+import "../../styles/levels.css";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { score } = useGame();

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../styles/scoreBar.css";
+import "../../styles/scoreBar.css";
 
 type Props = {
   score: number;
