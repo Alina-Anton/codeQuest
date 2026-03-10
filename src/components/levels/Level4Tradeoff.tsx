@@ -5,11 +5,6 @@ import ScoreBar from "../ui/ScoreBar";
 const Level4Tradeoff = () => {
   const { nextLevel, addScore, score } = useGame();
 
-  // const handleDecision = () => {
-  //   addScore(20);
-  //   nextLevel();
-  // };
-
   const handleDecision = (quality: "best" | "ok" | "bad") => {
     let score = 0;
 

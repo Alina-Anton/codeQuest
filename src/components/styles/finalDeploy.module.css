@@ -47,7 +47,7 @@
   color: #00f5d4;
   text-shadow: 0 0 10px #00f5d4, 0 0 20px #00f5d4, 0 0 30px #00f5d4;
   animation: pulse 1.5s infinite alternate;
-  margin-bottom: 290px;
+  margin-bottom: 270px;
 }
 
 /* Lower score text */
@@ -85,12 +85,12 @@
 }
 
 .section {
-  margin: 15px;
+  margin: 20px;
 }
 
 .section ul {
   list-style: none;  
-  padding-left: 40px; 
+  padding-left: 10px; 
   margin: 0;   
   text-align: left;
 }
