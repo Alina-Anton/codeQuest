@@ -18,26 +18,28 @@ const Level2Performance = () => {
     nextLevel();
   };
 
-return (
-  <div className="level-container">
-       <ScoreBar score={score} maxScore={100} />
-    <h2 className="level-title">Performance Optimization</h2>
-<p className="level-description">Fix slow react page due to heavy calculations and large components.</p>
+  return (
+    <div className="level-container">
+      <ScoreBar score={score} maxScore={100} />
+      <h2 className="level-title">Performance Optimization</h2>
+      <p className="level-description">
+        Fix slow react page due to heavy calculations and large components.
+      </p>
 
+      <div className="button-group">
+        <Button onClick={() => handleDecision("bad")}>
+          Add useMemo everywhere
+        </Button>
 
-    <div className="button-group">
-      <Button onClick={() => handleDecision("bad")}>
-        Add useMemo everywhere
-      </Button>
+        <Button onClick={() => handleDecision("best")}>
+          Memoize heavy computed values
+        </Button>
 
-      <Button onClick={() => handleDecision("best")}>
-      Memoize heavy computed values
-      </Button>
-
-      <Button onClick={() => handleDecision("ok")}>
-      Implement lazy loading + code splitting      </Button>
+        <Button onClick={() => handleDecision("ok")}>
+          Implement lazy loading + code splitting{" "}
+        </Button>
+      </div>
     </div>
-  </div>
-);
+  );
 };
- export default Level2Performance;
+export default Level2Performance;

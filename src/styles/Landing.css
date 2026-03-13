@@ -1,25 +1,22 @@
 .landing-root {
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    180deg,
-    #0d1117 0%,
-    #020409 100%
-  );
+  background: linear-gradient(180deg, #0d1117 0%, #020409 100%);
   color: white;
   font-family: Inter, sans-serif;
   position: relative;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .grid-bg {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,245,212,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,245,212,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 245, 212, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 212, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   animation: gridMove 30s linear infinite;
 }
@@ -69,24 +66,54 @@
 
 /* Random particle positions */
 
-.particle:nth-child(1){left:10%;bottom:-10px;animation-duration:10s;}
-.particle:nth-child(2){left:20%;bottom:-20px;animation-duration:8s;}
-.particle:nth-child(3){left:35%;bottom:-15px;animation-duration:9s;}
-.particle:nth-child(4){left:50%;bottom:-25px;animation-duration:7s;}
-.particle:nth-child(5){left:65%;bottom:-10px;animation-duration:11s;}
-.particle:nth-child(6){left:80%;bottom:-15px;animation-duration:9s;}
-.particle:nth-child(7){left:90%;bottom:-20px;animation-duration:8s;}
+.particle:nth-child(1) {
+  left: 10%;
+  bottom: -10px;
+  animation-duration: 10s;
+}
+.particle:nth-child(2) {
+  left: 20%;
+  bottom: -20px;
+  animation-duration: 8s;
+}
+.particle:nth-child(3) {
+  left: 35%;
+  bottom: -15px;
+  animation-duration: 9s;
+}
+.particle:nth-child(4) {
+  left: 50%;
+  bottom: -25px;
+  animation-duration: 7s;
+}
+.particle:nth-child(5) {
+  left: 65%;
+  bottom: -10px;
+  animation-duration: 11s;
+}
+.particle:nth-child(6) {
+  left: 80%;
+  bottom: -15px;
+  animation-duration: 9s;
+}
+.particle:nth-child(7) {
+  left: 90%;
+  bottom: -20px;
+  animation-duration: 8s;
+}
 
 /* CONTENT */
 
 .landing-content {
   text-align: center;
   z-index: 2;
+  max-width: 700px;
+  width: 100%;
 }
 
 .title {
   font-family: "JetBrains Mono", monospace;
-  font-size: 70px;
+  font-size: clamp(40px, 10vw, 70px);
   color: #00f5d4;
   text-shadow:
     0 0 8px #00f5d4,
@@ -96,8 +123,35 @@
 
 .subtitle {
   padding-top: 10px;
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .landing-root {
+    padding: 10px;
+  }
+  .title {
+    margin-bottom: 15px;
+  }
+  .subtitle {
+    padding-top: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-root {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 10px;
+  }
+  .title {
+    font-size: clamp(30px, 12vw, 50px);
+  }
+  .subtitle {
+    font-size: clamp(14px, 5vw, 18px);
+  }
 }
 
 .taglines {
@@ -110,7 +164,7 @@
 
 .start-btn {
   padding: 16px 48px;
-  width: 100%;
+  width: 350px;
   font-size: 16px;
   letter-spacing: 1px;
   color: #00f5d4;
@@ -145,108 +199,6 @@
   margin-top: 40px;
   font-size: 14px;
   opacity: 0.6;
-}.landing-root {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-    180deg,
-    #0d1117 0%,
-    #020409 100%
-  );
-  color: white;
-  font-family: Inter, sans-serif;
-  position: relative;
-}
-
-/* GRID BACKGROUND */
-
-.grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0,245,212,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,245,212,0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: gridMove 30s linear infinite;
-}
-
-@keyframes gridMove {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(40px);
-  }
-}
-
-/* PARTICLES */
-
-.particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.particle {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #00f5d4;
-  border-radius: 50%;
-  opacity: 0.4;
-  animation: float 8s infinite ease-in-out;
-}
-
-.particle:nth-child(odd) {
-  background: #6ef9ff;
-}
-
-@keyframes float {
-  from {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  to {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
-}
-
-/* Random particle positions */
-
-.particle:nth-child(1){left:10%;bottom:-10px;animation-duration:10s;}
-.particle:nth-child(2){left:20%;bottom:-20px;animation-duration:8s;}
-.particle:nth-child(3){left:35%;bottom:-15px;animation-duration:9s;}
-.particle:nth-child(4){left:50%;bottom:-25px;animation-duration:7s;}
-.particle:nth-child(5){left:65%;bottom:-10px;animation-duration:11s;}
-.particle:nth-child(6){left:80%;bottom:-15px;animation-duration:9s;}
-.particle:nth-child(7){left:90%;bottom:-20px;animation-duration:8s;}
-
-/* CONTENT */
-
-.landing-content {
-  text-align: center;
-  z-index: 2;
-}
-
-.title {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 72px;
-  color: #00f5d4;
-  text-shadow:
-    0 0 8px #00f5d4,
-    0 0 20px #00f5d4;
-  margin-bottom: 20px;
-}
-
-.subtitle {
   font-size: 20px;
   opacity: 0.9;
 }

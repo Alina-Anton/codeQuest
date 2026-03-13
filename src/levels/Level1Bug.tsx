@@ -5,7 +5,6 @@ import MonacoCodeEditor from "../components/ui/MonacoCodeEditor";
 import ScoreBar from "../components/ui/ScoreBar";
 import Button from "../components/ui/Button";
 
-
 const initialCode = `
 const [count, setCount] = useState(0);
 
@@ -49,10 +48,7 @@ const Level1Bug = () => {
       </p>
       <p className="level-description">⏱ Time Left: {timeLeft}s</p>
 
-      <MonacoCodeEditor
-        initialCode={initialCode}
-        onCodeChange={setCode}
-      />
+      <MonacoCodeEditor initialCode={initialCode} onCodeChange={setCode} />
 
       <div className="editor-actions">
         <Button onClick={handleRun}>Next</Button>

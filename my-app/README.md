@@ -88,7 +88,7 @@ git clone https://github.com/Alina-Anton/codeQuest.git
 
 
 # Project Structure
-
+```
 codequest
 │
 ├── screenshots
@@ -96,7 +96,6 @@ codequest
 │   ├── level1-bug.png
 │   ├── level2-performance.png
 │   ├── level3-accessibility.png
-│   ├── level4-prod-decision.png
 │   ├── final-deploy-high-score.png
 │   └── final-deploy-lower-score.png
 │
@@ -144,6 +143,7 @@ codequest
 ├── package.json
 ├── tsconfig.json
 └── README.md
+```
 
 #  Engineering Design Decisions
 ### Why Context API instead of Redux?

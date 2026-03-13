@@ -14,12 +14,6 @@ const Level4Tradeoff = () => {
     addScore(score);
     nextLevel();
   };
-  
-  const handleSuccess = () => {
-    const baseScore = 30;
-    addScore(baseScore);
-    nextLevel();
-  };
 
   return (
     <div className="level-container">
@@ -28,13 +22,14 @@ const Level4Tradeoff = () => {
       <p className="level-description">
         Marketing wants heavy animations. Deadline is tomorrow. What do you do?
       </p>
-    <div className="button-group">
-      <Button onClick={() => handleDecision("bad")}>
-      Do it overnight and hope nothing breaks      </Button>
-      <Button onClick={() => handleDecision("best")}>
-      Suggest lightweight CSS transitions + phased rollout
-      </Button>
-    </div>
+      <div className="button-group">
+        <Button onClick={() => handleDecision("bad")}>
+          Do it overnight and hope nothing breaks{" "}
+        </Button>
+        <Button onClick={() => handleDecision("best")}>
+          Suggest lightweight CSS transitions + phased rollout
+        </Button>
+      </div>
     </div>
   );
 };

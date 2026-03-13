@@ -1,5 +1,5 @@
 .vscode-window {
-    width: 80%;
+    width: 90%;
     max-width: 700px;
     margin: 20px auto;
     border-radius: 8px;
@@ -78,3 +78,51 @@
     font-size: 14px;
     padding-bottom: 10px;
   }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .vscode-window {
+    width: 95%;
+    margin: 15px auto;
+  }
+  .vscode-titlebar {
+    height: 28px;
+    padding: 0 8px;
+  }
+  .circle {
+    width: 8px;
+    height: 8px;
+  }
+  .vscode-title {
+    font-size: 11px;
+  }
+  .editor-actions {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vscode-window {
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 4px;
+  }
+  .vscode-titlebar {
+    height: 24px;
+    padding: 0 6px;
+  }
+  .circle {
+    width: 6px;
+    height: 6px;
+  }
+  .vscode-title {
+    font-size: 10px;
+  }
+  .editor-actions {
+    padding: 8px;
+  }
+  .editor-error {
+    font-size: 12px;
+    padding-bottom: 8px;
+  }
+}

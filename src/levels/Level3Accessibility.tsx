@@ -6,10 +6,6 @@ const Level3Accessibility = () => {
   const { nextLevel, addScore } = useGame();
   const { score } = useGame();
 
-  const handlePass = () => {
-    addScore(20);
-    nextLevel();
-  };
   const handleDecision = (quality: "best" | "ok" | "bad") => {
     let score = 0;
 
@@ -28,23 +24,18 @@ const Level3Accessibility = () => {
 
       <p className="level-description">What's wrong with this submit button?</p>
 
-      <button className="fake-submit" >
-  Submit
-</button>
+      <button className="fake-submit">Submit</button>
       <div className="button-group">
+        <Button onClick={() => handleDecision("bad")}>
+          Button looks good to me{" "}
+        </Button>
 
-    
-      <Button onClick={() => handleDecision("bad")}>
-      Button looks good to me      </Button>
+        <Button onClick={() => handleDecision("ok")}>Low-contrast text </Button>
 
-      <Button onClick={() => handleDecision("ok")}>
-Low-contrast text      </Button>
-
-<Button onClick={() => handleDecision("best")}>
-      Faulty layout styles      </Button>
-
-     
-    </div>
+        <Button onClick={() => handleDecision("best")}>
+          Faulty layout styles{" "}
+        </Button>
+      </div>
     </div>
   );
 };

@@ -8,7 +8,6 @@ type Props = {
 const Landing: React.FC<Props> = ({ onStart }) => {
   return (
     <div className="landing-root">
-
       {/* Grid Background */}
       <div className="grid-bg" />
 
@@ -27,7 +26,6 @@ const Landing: React.FC<Props> = ({ onStart }) => {
         </button>
 
         <p className="subtitle">A frontend engineering experience</p>
-
 
         <div className="footer">
           <p>Estimated time: 5 minutes</p>
