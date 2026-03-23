@@ -8,7 +8,7 @@ Instead of showcasing code through a static portfolio, CodeQuest simulates the *
 
 
 # Live Demo
-Try the simulation: https://codequest-2fqa--5173--056788dd.local-corp.webcontainer.io/
+Try the simulation: https://codequestsimulation.web.app
 
 
 

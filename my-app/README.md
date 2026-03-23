@@ -5,7 +5,7 @@ Instead of showcasing code through a static portfolio, CodeQuest simulates the *
 
 
 # Live Demo
-Try the simulation: https://alina-anton.github.io/codeQuest/
+Try the simulation: https://codequestsimulation.web.app
 
 
 # Simulation Overview
