@@ -1,24 +1,30 @@
+import { useState } from "react";
 import { useGame } from "../context/GameContext";
 import Button from "../components/ui/Button";
 import ScoreBar from "../components/ui/ScoreBar";
+import { validateAnswer } from "../api/validateAnswer";
 
 const Level3Accessibility = () => {
-  const { nextLevel, addScore } = useGame();
-  const { score } = useGame();
+  const { nextLevel, addScore, score } = useGame();
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  const handlePass = () => {
-    addScore(20);
-    nextLevel();
-  };
-  const handleDecision = (quality: "best" | "ok" | "bad") => {
-    let score = 0;
-
-    if (quality === "best") score = 20;
-    if (quality === "ok") score = 2;
-    if (quality === "bad") score = 0;
-
-    addScore(score);
-    nextLevel();
+  const handleDecision = async (optionId: "a" | "b" | "c") => {
+    if (submitting) return;
+    try {
+      setSubmitting(true);
+      setError("");
+      const result = await validateAnswer({
+        challengeId: "level3",
+        submission: optionId,
+      });
+      addScore(result.points);
+      nextLevel();
+    } catch {
+      setError("Could not validate answer. Try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -28,23 +34,29 @@ const Level3Accessibility = () => {
 
       <p className="level-description">What's wrong with this submit button?</p>
 
-      <button className="fake-submit" >
-  Submit
-</button>
+      <button className="fake-submit">Submit</button>
       <div className="button-group">
+        <Button onClick={() => void handleDecision("a")}>
+          Button looks good to me{" "}
+        </Button>
 
-    
-      <Button onClick={() => handleDecision("bad")}>
-      Button looks good to me      </Button>
+        <Button onClick={() => void handleDecision("b")}>Low-contrast text </Button>
 
-      <Button onClick={() => handleDecision("ok")}>
-Low-contrast text      </Button>
-
-<Button onClick={() => handleDecision("best")}>
-      Faulty layout styles      </Button>
-
-     
-    </div>
+        <Button onClick={() => void handleDecision("c")}>
+          Faulty layout styles{" "}
+        </Button>
+      </div>
+      {submitting && (
+        <p className="checking-indicator">
+          Checking{" "}
+          <span className="checking-dots" aria-hidden="true">
+            <span className="checking-dot">.</span>
+            <span className="checking-dot">.</span>
+            <span className="checking-dot">.</span>
+          </span>
+        </p>
+      )}
+      {error && <p className="editor-error">{error}</p>}
     </div>
   );
 };

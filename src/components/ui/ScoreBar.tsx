@@ -8,23 +8,17 @@ type Props = {
 
 const ScoreBar = ({ score, maxScore = 100 }: Props) => {
   const [displayScore, setDisplayScore] = useState(0);
-  const [fillPercentage, setFillPercentage] = useState(0);
+  const fillPercentage = (displayScore / maxScore) * 100;
 
   useEffect(() => {
-    let currentScore = displayScore;
-    let currentPercentage = fillPercentage;
-    const targetPercentage = (score / maxScore) * 100;
-
     const interval = setInterval(() => {
-      if (currentScore < score) currentScore += 1;
-      if (currentPercentage < targetPercentage) currentPercentage += (targetPercentage - currentPercentage) / 5;
-
-      setDisplayScore(currentScore);
-      setFillPercentage(currentPercentage);
-
-      if (currentScore >= score && currentPercentage >= targetPercentage) {
-        clearInterval(interval);
-      }
+      setDisplayScore((prev) => {
+        if (prev >= score) {
+          clearInterval(interval);
+          return prev;
+        }
+        return prev + 1;
+      });
     }, 15);
 
     return () => clearInterval(interval);

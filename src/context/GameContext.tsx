@@ -1,8 +1,4 @@
-<<<<<<< Alina-Anton/codeQuest
-import React, { createContext, useContext, useState, ReactNode } from "react";
-=======
 import React, { createContext, useContext, useState, type ReactNode } from "react";
->>>>>>> main
 
 type Level = 0 | 1 | 2 | 3 | 4 | 5;
 

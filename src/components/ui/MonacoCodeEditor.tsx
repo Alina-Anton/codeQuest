@@ -18,7 +18,6 @@ const MonacoCodeEditor = ({ initialCode, onCodeChange }: Props) => {
 
   return (
     <div className="vscode-window">
-
       {/* VS Code titlebar */}
       <div className="vscode-titlebar">
         <div className="vscode-buttons">

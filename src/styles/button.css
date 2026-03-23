@@ -1,5 +1,5 @@
 .dev-button {
- width: 350px;
+ width: min(350px, 90vw);
     padding: 14px;
     border: 1px solid  #00f5d4;
     background: transparent;
@@ -21,3 +21,12 @@
     box-shadow: 0 0 10px  #00f5d4;
     transform: translateY(-1px);
   }
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .dev-button {
+    width: min(300px, 95vw);
+    padding: 12px;
+    font-size: 13px;
+  }
+}
