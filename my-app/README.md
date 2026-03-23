@@ -22,23 +22,23 @@ Simulation flow:
 
 #  Screenshots
 ### Landing Experience
-![Landing](./screenshots/landing.png)
+![Landing](../screenshots/landing.png)
 The simulation begins with a futuristic landing interface.
 ---
 ### Debugging Challenge
-![Bug Level](./screenshots/level1-bug.png)
+![Bug Level](../screenshots/level1-bug.png)
 Players must fix a **React `useEffect` dependency bug** using a Monaco code editor.
 ---
 ### Engineering Decision Level
-![Decision Level](./screenshots/level4-prod-desigion.png)
+![Decision Level](../screenshots/level4-prod-decision.png)
 Players choose the best **performance optimization strategy**.
 ---
 ### Final Deployment
 The simulation ends with a final score and **AI engineering review**.
 Example output for 100/100:
-![Final Score](./screenshots/final-deploy-high-score.png)
+![Final Score](../screenshots/final-deploy-high-score.png)
 Example output for lower score:
-![Final Score](./screenshots/final-deploy-lower-score.png)
+![Final Score](../screenshots/final-deploy-lower-score.png)
 
 
 # Tech Stack
@@ -96,6 +96,7 @@ codequest
 │   ├── level1-bug.png
 │   ├── level2-performance.png
 │   ├── level3-accessibility.png
+│   ├── level4-prod-decision.png
 │   ├── final-deploy-high-score.png
 │   └── final-deploy-lower-score.png
 │

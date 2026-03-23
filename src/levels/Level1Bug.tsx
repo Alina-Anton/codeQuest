@@ -4,6 +4,7 @@ import { useTimer } from "../hooks/useTimer";
 import MonacoCodeEditor from "../components/ui/MonacoCodeEditor";
 import ScoreBar from "../components/ui/ScoreBar";
 import Button from "../components/ui/Button";
+import { validateAnswer } from "../api/validateAnswer";
 
 const initialCode = `
 const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ const Level1Bug = () => {
   const { nextLevel, addScore, score } = useGame();
   const [code, setCode] = useState(initialCode);
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const handleExpire = useCallback(() => {
     nextLevel();
@@ -24,17 +26,24 @@ const Level1Bug = () => {
 
   const { timeLeft } = useTimer(60, handleExpire);
 
-  const validateFix = (code: string) => {
-    return code.includes("[count]");
-  };
-
-  const handleRun = () => {
-    if (validateFix(code)) {
-      setError("");
-      addScore(30);
-      nextLevel();
-    } else {
-      setError("❌ Not fixed. Check your dependency array.");
+  const handleRun = async () => {
+    try {
+      setSubmitting(true);
+      const result = await validateAnswer({
+        challengeId: "level1",
+        submission: code,
+      });
+      if (result.correct) {
+        setError("");
+        addScore(result.points);
+        nextLevel();
+      } else {
+        setError("Not fixed yet. Check your dependency array.");
+      }
+    } catch {
+      setError("Could not validate answer. Try again.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -51,7 +60,9 @@ const Level1Bug = () => {
       <MonacoCodeEditor initialCode={initialCode} onCodeChange={setCode} />
 
       <div className="editor-actions">
-        <Button onClick={handleRun}>Next</Button>
+        <Button onClick={() => void handleRun()}>
+          {submitting ? "Checking..." : "Next"}
+        </Button>
       </div>
 
       {error && <p className="editor-error">{error}</p>}

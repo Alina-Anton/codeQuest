@@ -116,6 +116,16 @@ Players earn points based on decision quality.
 
 Final score determines the **deployment outcome**.
 
+### Anti-Cheating Validation
+
+CodeQuest includes anti-cheating protection for challenge submissions.
+
+- Challenge attempts are written to Firestore (`challengeAttempts`).
+- Firestore Security Rules validate allowed answers and reject invalid submissions.
+- Challenge validation logic is enforced by backend rules, not trusted browser UI state.
+
+This means users cannot simply edit local UI behavior to submit arbitrary answers.
+
 
 ### Timer on Engineering Challenge
 
@@ -142,7 +152,7 @@ codequest
 │   ├── level1-bug.png
 │   ├── level2-performance.png
 │   ├── level3-accessibility.png
-│   ├── level3-accessibility.png
+│   ├── level4-prod-decision.png
 │   ├── final-deploy-high-score.png
 │   └── final-deploy-lower-score.png
 │
