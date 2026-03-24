@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "api": "node server/index.js",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
     "firebase:build": "tsc -b && vite build --base /",
     "firebase:deploy": "npm run firebase:build && firebase deploy --only firestore,hosting",
     "firebase:emulate": "firebase emulators:start --only firestore,hosting",
@@ -23,6 +25,10 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.3",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.11.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -32,8 +38,13 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "gh-pages": "^5.0.0",
     "globals": "^17.4.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "ts-jest": "^29.4.6",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "whatwg-fetch": "^3.6.20"
   }
 }
