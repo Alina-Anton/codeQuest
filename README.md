@@ -145,6 +145,7 @@ git clone https://github.com/Alina-Anton/codeQuest.git
 
 # Project Structure
 
+```text
 codequest
 │
 ├── screenshots
@@ -201,6 +202,7 @@ codequest
 ├── tsconfig.jest.json
 ├── tsconfig.json
 └── README.md
+```
 
 
 
