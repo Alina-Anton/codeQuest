@@ -162,8 +162,11 @@ codequest
 │   ├── levels
 │   │   ├── Landing.tsx
 │   │   ├── Level1Bug.tsx
+│   │   ├── Level2Performance.test.tsx
 │   │   ├── Level2Performance.tsx
+│   │   ├── Level3Accessibility.test.tsx
 │   │   ├── Level3Accessibility.tsx
+│   │   ├── Level4Tradeoff.test.tsx
 │   │   ├── Level4Tradeoff.tsx
 │   │   └── FinalDeploy.tsx
 │   │
