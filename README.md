@@ -176,22 +176,29 @@ codequest
 │   │       └── MonacoCodeEditor.tsx
 │   │
 │   ├── context
-│   │   └── GameContext.tsx
+│   │   ├── GameContext.tsx
+│   │   └── GameContext.test.tsx
 │   │
 │   ├── hooks
 │   │   └── useTimer.ts
+│   │
+│   ├── test
+│   │   └── setupTests.ts
 │   │
 │   ├── utils
 │   │   └── generateAIReview.ts
 │   │
 │   ├── styles
 │   │
+│   ├── App.test.tsx
 │   ├── App.tsx
 │   └── main.tsx
 │
 ├── public
 │
+├── jest.config.cjs
 ├── package.json
+├── tsconfig.jest.json
 ├── tsconfig.json
 └── README.md
 
