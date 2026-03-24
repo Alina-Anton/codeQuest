@@ -1,16 +1,12 @@
-
 # CodeQuest — Frontend Engineering Simulation
 
 **CodeQuest** is an interactive **React engineering simulation** where players progress through realistic frontend challenges including debugging, performance optimization, accessibility audits, and product trade-offs.
 
 Instead of showcasing code through a static portfolio, CodeQuest simulates the **decision-making process of a real frontend engineer**.
 
-
-
 # Live Demo
+
 Try the simulation: https://codequestsimulation.web.app
-
-
 
 # Simulation Overview
 
@@ -27,57 +23,54 @@ Simulation flow:
 5. Product Decision
 6. Final Deployment + AI Engineering Review
 
-
-
-#  Screenshots
+# Screenshots
 
 ### Landing Experience
 
-![Landing](./screenshots/landing.png)
-
 The simulation begins with a futuristic landing interface.
+
+![Landing](./screenshots/landing.png)
 
 ---
 
 ### Debugging Challenge
 
-![Bug Level](./screenshots/level1-bug.png)
-
 Players must fix a **React `useEffect` dependency bug** using a Monaco code editor.
+
+![Bug Level](./screenshots/level1-bug.png)
 
 ---
 
 ### Engineering Decision Level
 
-![Decision Level](./screenshots/level4-prod-decision.png)
-
 Players choose the best **performance optimization strategy**.
+
+![Decision Level](./screenshots/level4-prod-decision.png)
 
 ---
 
 ### Final Deployment
 
+The simulation ends with a final score and **AI engineering review**.
+
 Example output for 100/100:
+
 ![Final Score](./screenshots/final-deploy-high-score.png)
 
 Example output for lower score:
+
 ![Final Score](./screenshots/final-deploy-lower-score.png)
-
-The simulation ends with a final score and **AI engineering review**.
-
-
 
 # Tech Stack
 
 Core technologies used in this project:
+
 - React
 - TypeScript
 - Monaco Editor
 - React Context
 - Custom Hooks
 - CSS Modules
-
-
 
 # Key Features
 
@@ -88,21 +81,18 @@ Players fix a real React bug inside a Monaco editor.
 Example issue:
 
 useEffect(() => {
-  console.log("Count changed");
+console.log("Count changed");
 }, []);
-
 
 Expected fix:
 
 useEffect(() => {
-  console.log("Count changed");
+console.log("Count changed");
 }, [count]);
-
 
 ### AI Engineering Review
 
 At the end of the simulation, CodeQuest generates an **AI-style engineering review** summarizing their strengths and improvement areas.
-
 
 ### Score-Based Game System
 
@@ -126,7 +116,6 @@ CodeQuest includes anti-cheating protection for challenge submissions.
 
 This means users cannot simply edit local UI behavior to submit arbitrary answers.
 
-
 ### Timer on Engineering Challenge
 
 The debugging level includes a **60-second countdown timer**.
@@ -135,13 +124,10 @@ useTimer(60, handleExpire)
 
 If time expires, the simulation proceeds to the next scenario with 0 points.
 
+# Running Locally
 
-
-#  Running Locally
 Clone the repository and start the development server.
 git clone https://github.com/Alina-Anton/codeQuest.git
-
-
 
 # Project Structure
 
@@ -207,20 +193,17 @@ codequest
 └── README.md
 ```
 
-
-
-#  Engineering Design Decisions
+# Engineering Design Decisions
 
 ### Why Context API instead of Redux?
 
 The application state is small and focused on:
 
-* score
-* current level
-* game progression
+- score
+- current level
+- game progression
 
 Using **React Context** keeps the architecture simple without unnecessary dependencies.
-
 
 ### Why Monaco Editor?
 
@@ -228,23 +211,20 @@ Monaco provides a **real developer editing experience** similar to VS Code.
 
 This makes the debugging challenge feel like an **authentic coding environment** rather than a quiz.
 
-
 ### Why a Simulation Instead of a Portfolio?
 
 Most portfolios show UI work.
 
 CodeQuest demonstrates:
 
-* engineering reasoning
-* debugging skills
-* architecture thinking
-* product trade-offs
+- engineering reasoning
+- debugging skills
+- architecture thinking
+- product trade-offs
 
 Which better reflects **real frontend engineering work.**
 
-
-
-#  Inspiration
+# Inspiration
 
 CodeQuest was built to explore a new idea:
 
@@ -252,21 +232,17 @@ A developer portfolio should feel like a **product experience**, not just a coll
 
 The goal is to demonstrate **engineering thinking through interaction**.
 
-
-
-#  Future Improvements
+# Future Improvements
 
 Potential expansions include:
 
-* more engineering challenge levels
-* real code evaluation using AST parsing
-* devtools-style console system
-* multiplayer interview mode
-* leaderboard and scoring system
-* live component sandbox challenges
+- more engineering challenge levels
+- real code evaluation using AST parsing
+- devtools-style console system
+- multiplayer interview mode
+- leaderboard and scoring system
+- live component sandbox challenges
 
-
-
-#  License
+# License
 
 MIT License.
